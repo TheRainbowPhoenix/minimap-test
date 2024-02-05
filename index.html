@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + Svelte + TS</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+  <script>
+    function update(type, ...args) {
+      // Create a custom event with the type as the event name and args as event data
+      const customEvent = new CustomEvent(type, {
+        detail: args.length === 1 ? args[0] : args,
+      });
+
+      // Dispatch the custom event on the window object
+      window.dispatchEvent(customEvent);
+    }
+  </script>
+</body>
+
+</html>

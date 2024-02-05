@@ -1,4 +1,5 @@
 <script>
+  import "./app.css";
   import { width, height } from "./game.js";
 
   import Canvas from "./Canvas.svelte";
@@ -26,11 +27,3 @@
   <FPS />
 </Canvas>
 <MiniMap />
-
-<style>
-  :global(body) {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-</style>

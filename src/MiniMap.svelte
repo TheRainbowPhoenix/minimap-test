@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from "svelte";
 
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
@@ -13,7 +13,7 @@
 
   onMount(() => {
     window.addEventListener("LocalPlayerPos", (event) => {
-      const customEvent = event;
+      const customEvent = event as CustomEvent<number[]>;
       if (customEvent.detail != undefined) {
         // doArmorUpdate
         // console.log(customEvent);
@@ -22,7 +22,7 @@
     });
 
     window.addEventListener("LocalPlayerAngles", (event) => {
-      const customEvent = event;
+      const customEvent = event as CustomEvent<number[]>;
       if (customEvent.detail != undefined) {
         // doArmorUpdate
         let _;
